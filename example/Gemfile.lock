@@ -1,3 +1,8 @@
+PATH
+  remote: ..
+  specs:
+    just_keep_migrating (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -179,6 +184,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
+  just_keep_migrating!
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.7)
   rails (~> 5.1.3)
