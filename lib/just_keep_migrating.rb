@@ -1,5 +1,3 @@
 require "just_keep_migrating/version"
-
-module JustKeepMigrating
-  # Your code goes here...
-end
+require "just_keep_migrating/pending_migrations_error"
+require "just_keep_migrating/railtie" if defined?(Rails)
