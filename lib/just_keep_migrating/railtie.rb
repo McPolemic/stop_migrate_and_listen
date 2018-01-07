@@ -7,17 +7,27 @@ module GoodMigrations
     end
 
     def check_for_pending_migrations!
-      pending_migrations = ActiveRecord::Migrator.open(ActiveRecord::Tasks::DatabaseTasks.migrations_paths).pending_migrations
+      return unless migrations.any?
 
-      if pending_migrations.any?
-        puts caller
-        puts "You have #{pending_migrations.size} pending #{pending_migrations.size > 1 ? 'migrations:' : 'migration:'}"
-        pending_migrations.each do |pending_migration|
-          puts "  %4d %s" % [pending_migration.version, pending_migration.name]
-        end
-        puts %{Run `rails db:migrate` to update your database then try again.}
-        exit(false)
+      report_pending_migrations!
+    end
+
+    def report_pending_migrations!
+      puts "*" * 60
+      puts "You have #{migrations.size} pending #{'migration'.pluralize(migrations.size)}."
+      puts
+      migrations.each do |pending_migration|
+        puts "* %s" % [pending_migration.filename]
       end
+      puts
+      puts "Run `rails db:migrate` to update your database and try again."
+      puts "*" * 60
+
+      exit(false)
+    end
+
+    def migrations
+      ActiveRecord::Migrator.open(ActiveRecord::Tasks::DatabaseTasks.migrations_paths).pending_migrations
     end
   end
 end
