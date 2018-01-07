@@ -17,8 +17,6 @@ RSpec.describe JustKeepMigrating do
     describe "starting a rails server" do
       it "blocks and prints an error" do
         stdout, stderr = shell("bundle exec rails server")
-        puts stdout
-        puts stderr
         expect(stdout).to include "You have 1 pending migration"
       end
     end
