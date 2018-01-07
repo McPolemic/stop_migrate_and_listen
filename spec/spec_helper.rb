@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "just_keep_migrating"
+require "stop_migrate_and_listen"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

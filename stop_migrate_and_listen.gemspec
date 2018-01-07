@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "just_keep_migrating/version"
+require "stop_migrate_and_listen/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "just_keep_migrating"
-  spec.version       = JustKeepMigrating::VERSION
+  spec.name          = "stop_migrate_and_listen"
+  spec.version       = StopMigrateAndListen::VERSION
   spec.authors       = ["Adam Lukens"]
   spec.email         = ["adam@testdouble.com"]
 
-  spec.summary       = %q{Require migrations to have been run for rails to boot}
-  spec.description   = %q{Require migrations to have been run for rails to boot}
-  spec.homepage      = "https://github.com/McPolemic/just_keep_migrating"
+  spec.summary       = %q{Require migrations to run for rails to boot}
+  spec.description   = %q{Require migrations to run for rails to boot}
+  spec.homepage      = "https://github.com/McPolemic/stop_migrate_and_listen"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

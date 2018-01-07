@@ -1,7 +1,7 @@
 require "spec_helper"
 require 'open3'
 
-RSpec.describe JustKeepMigrating do
+RSpec.describe StopMigrateAndListen do
   before(:all) do
     @script_setup = <<-BASH
       cd example
@@ -10,7 +10,7 @@ RSpec.describe JustKeepMigrating do
   end
 
   it "has a version number" do
-    expect(JustKeepMigrating::VERSION).not_to be nil
+    expect(StopMigrateAndListen::VERSION).not_to be nil
   end
 
   context "with pending migrations" do
